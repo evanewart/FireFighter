@@ -83,7 +83,7 @@ bool Firefighter::HtoA() { //TODO: in a untested state
       break;
 
     case ENTER_ROOM: // Move forward robot length + buffer (enter room)
-      drive.move(ROBOT_LENGTH + ROOM_FORWARD_BUFFER);
+      drive.move((ROBOT_LENGTH / 2.54) + ROOM_FORWARD_BUFFER);
 
       if (drive.atTargetPosition()) {
         drive.resetEncoder();
@@ -140,7 +140,7 @@ bool Firefighter::HtoA() { //TODO: in a untested state
       break;
 
     case LEAVE_ROOM:
-      drive.move(ROBOT_LENGTH + ROOM_FORWARD_BUFFER);
+      drive.move((ROBOT_LENGTH / 2.54) + ROOM_FORWARD_BUFFER);
 
       if (drive.atTargetPosition()) {
         drive.resetEncoder();
