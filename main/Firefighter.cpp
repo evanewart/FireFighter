@@ -82,6 +82,15 @@ bool Firefighter::HtoA() { //TODO: in a untested state
       }
       break;
 
+    case BEFORE_HALLWAY: 
+     drive.moveForward();
+
+     if (!openingOnRight()) {
+        drive.resetEncoder();
+        stateHtoA = MOVE_UNTIL_OPENING;
+     }
+      break;
+    
     case ENTER_ROOM: // Move forward robot length + buffer (enter room)
       drive.move((ROBOT_LENGTH / 2.54) + ROOM_FORWARD_BUFFER);
 
